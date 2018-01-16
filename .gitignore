@@ -19,3 +19,11 @@
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+
+# Local VS folder
+\.vs/
+
+# Other Ignores
+Builds/
+
+Art Assests*Ref/
