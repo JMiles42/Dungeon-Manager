@@ -13,17 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     Tiles:
-    - TileType: 1
-    - TileType: 1
-    - TileType: 1
-    - TileType: 1
-    - TileType: 1
-    - TileType: 1
-    - TileType: 1
-    - TileType: 1
-    - TileType: 1
-    - TileType: 1
-    - TileType: 1
     - TileType: 0
     - TileType: 0
     - TileType: 0
@@ -33,7 +22,6 @@ MonoBehaviour:
     - TileType: 0
     - TileType: 0
     - TileType: 0
-    - TileType: 1
     - TileType: 0
     - TileType: 0
     - TileType: 0
@@ -43,7 +31,144 @@ MonoBehaviour:
     - TileType: 0
     - TileType: 0
     - TileType: 0
-    - TileType: 1
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
+    - TileType: 0
     - TileType: 0
     - TileType: 0
     - TileType: 0
