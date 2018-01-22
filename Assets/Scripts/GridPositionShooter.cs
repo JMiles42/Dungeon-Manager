@@ -18,10 +18,10 @@ public class GridPositionShooter: JMilesBehavior
 			Debug.Log(gP);
 		}
 	}
+
 #if UNITY_EDITOR
-	private void OnDrawGizmos()
+	private void OnDrawGizmosSelected()
 	{
-		//var gP = Camera.main.ScreenPointToRay(Vector3.one * 0.5f).GetGridPosition();
 		var gP = HandleUtility.GUIPointToWorldRay(new Vector2(Screen.width/2,Screen.height/2)).GetGridPosition();
 		var mP = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition).GetGridPosition();
 		var cP = GridPosition.Zero;
