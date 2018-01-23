@@ -2,6 +2,7 @@
 using JMiles42.Utilities.Enums;
 using UnityEngine;
 
+[CreateAssetMenu]
 public class PrefabPlaceable: BasePlaceable
 {
 	public GameObject Prefab;
@@ -15,7 +16,7 @@ public class PrefabPlaceable: BasePlaceable
 			prefabInstance.SetActive(true);
 	}
 
-	public override void OnPlacement(GridPosition gridPos, Vector3 worldPos)
+	public override void OnPlacementConfirm(GridPosition gridPos, Vector3 worldPos)
 	{
 		if(prefabInstance)
 		{
@@ -25,7 +26,7 @@ public class PrefabPlaceable: BasePlaceable
 		}
 	}
 
-	public override void OnPlacementCancel(GridPosition gridPos, Vector3 worldPos)
+	public override void OnPlacementCancel()
 	{
 		if(prefabInstance)
 			prefabInstance.SetActive(false);
@@ -34,16 +35,12 @@ public class PrefabPlaceable: BasePlaceable
 	public override void OnPlacementUpdate(GridPosition gridPos, Vector3 worldPos)
 	{
 		if(prefabInstance)
-		{
-			prefabInstance.transform.position = worldPos;
-		}
+			prefabInstance.transform.position = gridPos.WorldPosition;
 	}
 
-	public override void OnPlacementRotate(Direction_LR Rotate)
+	public override void OnPlacementRotate(Direction_LR dir)
 	{
 		if(prefabInstance)
-		{
-			
-		}
+			prefabInstance.transform.Rotate(dir);
 	}
 }

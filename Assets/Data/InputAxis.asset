@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5753d0a96ebbb6244a8fe2813eeac80d, type: 3}
+  m_Name: InputAxis
+  m_EditorClassIdentifier: 
+--- !u!114 &114152720497503092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Jump
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Jump
+    UnityAxis: Jump
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114280237389744534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Mouse Y
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Mouse Y
+    UnityAxis: Mouse Y
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114330069535280228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Submit
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Submit
+    UnityAxis: Submit
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114423292790068118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Vertical
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Vertical
+    UnityAxis: Vertical
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114527961946676998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Mouse ScrollWheel
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Mouse ScrollWheel
+    UnityAxis: Mouse ScrollWheel
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114621026351797150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Horizontal
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Horizontal
+    UnityAxis: Horizontal
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114667269035101174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Fire3
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Fire3
+    UnityAxis: Fire3
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114684943893908588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Fire1
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Fire1
+    UnityAxis: Fire1
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114695843022490172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Mouse X
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Mouse X
+    UnityAxis: Mouse X
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114845956205945732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Fire2
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Fire2
+    UnityAxis: Fire2
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114970466975453844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: Cancel
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: Cancel
+    UnityAxis: Cancel
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0

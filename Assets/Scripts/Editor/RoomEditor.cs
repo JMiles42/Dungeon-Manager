@@ -9,13 +9,7 @@ using UnityEngine;
 public class RoomEditor: JMilesEditorBase<RoomSO>
 {
 	private const float BUTTON_SIZE = 32;
-	private const float BORDER_SIZE = 64f;
-
-	//public Tile[] Tiles
-	//{
-	//	get { return Target.Data.Tiles; }
-	//	set { Target.Data.Tiles = value; }
-	//}
+	private const float BORDER_SIZE = 24f;
 
 	public override void OnInspectorGUI()
 	{
@@ -107,13 +101,16 @@ public class RoomEditor: JMilesEditorBase<RoomSO>
 		}
 	}
 
+	internal static readonly GUIContent[] GUI_CONTENT_ARRAY =
+	{
+		new GUIContent("E", "Empty Tile"),
+		new GUIContent("F", "Floor Tile")
+	};
+
 	private static void DrawButtons(SerializedProperty iProp)
 	{
-		var guiContent = iProp.enumValueIndex == 0?
-			new GUIContent("E", "Empty Tile") :
-			new GUIContent("F", "Floor Tile");
-		var EmptyTileBtn = JMilesGUILayoutEvents.Button(guiContent, GUILayout.Width(BUTTON_SIZE), GUILayout.Height(BUTTON_SIZE));
-		if(EmptyTileBtn)
+		var btn = JMilesGUILayoutEvents.Button(GUI_CONTENT_ARRAY[iProp.enumValueIndex], GUILayout.Width(BUTTON_SIZE), GUILayout.Height(BUTTON_SIZE));
+		if(btn)
 		{
 			iProp.enumValueIndex = iProp.enumValueIndex ^ 1;
 			iProp.serializedObject.ApplyModifiedProperties();
@@ -122,11 +119,8 @@ public class RoomEditor: JMilesEditorBase<RoomSO>
 
 	private static void DrawButtons(Rect pos, SerializedProperty iProp)
 	{
-		var guiContent = iProp.enumValueIndex == 0?
-			new GUIContent("E", "Empty Tile") :
-			new GUIContent("F", "Floor Tile");
-		var EmptyTileBtn = JMilesGUIEvents.Button(pos, guiContent);
-		if(EmptyTileBtn)
+		var btn = JMilesGUIEvents.Button(pos, GUI_CONTENT_ARRAY[iProp.enumValueIndex]);
+		if(btn)
 		{
 			iProp.enumValueIndex = iProp.enumValueIndex ^ 1;
 			iProp.serializedObject.ApplyModifiedProperties();
