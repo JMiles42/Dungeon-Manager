@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1174245479961850}
+  m_IsPrefabParent: 1
+--- !u!1 &1174245479961850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4652502068957632}
+  - component: {fileID: 114073128481880738}
+  m_Layer: 0
+  m_Name: Adv Input Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4652502068957632
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174245479961850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114073128481880738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174245479961850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7224fa83062887147bbf655b4479e569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AxisVariables:
+  - {fileID: 114621026351797150, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114423292790068118, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114684943893908588, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114845956205945732, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114667269035101174, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114152720497503092, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114695843022490172, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114280237389744534, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114527961946676998, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114330069535280228, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114970466975453844, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  MousePosition:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0, z: 0}
+    Variable: {fileID: 114034299123113616, guid: 845490c07926d2040881dfa06db0f5cd,
+      type: 2}

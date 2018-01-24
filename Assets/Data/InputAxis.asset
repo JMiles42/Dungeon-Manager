@@ -11,6 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5753d0a96ebbb6244a8fe2813eeac80d, type: 3}
   m_Name: InputAxis
   m_EditorClassIdentifier: 
+--- !u!114 &114034299123113616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ed7618ee09a424cb4d8bf974e8dac9, type: 3}
+  m_Name: Mouse Position
+  m_EditorClassIdentifier: 
+  _value: {x: 0, y: 0, z: 0}
 --- !u!114 &114152720497503092
 MonoBehaviour:
   m_ObjectHideFlags: 0
