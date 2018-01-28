@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5753d0a96ebbb6244a8fe2813eeac80d, type: 3}
-  m_Name: PlaceableLogic
+  m_Name: GridReferances
   m_EditorClassIdentifier: 
---- !u!114 &114297423598768620
+--- !u!114 &114274260391060176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -20,9 +20,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa19eb1802fc06242baaefa632f8163b, type: 3}
-  m_Name: CameraDolly
-  m_EditorClassIdentifier: 
---- !u!114 &114502777583791872
+  m_Name: GridFolder
+  m_EditorClassIdentifier: Assembly-CSharp-firstpass:JMiles42.AdvVar:TransformListVariable
+--- !u!114 &114857605449287126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -30,6 +30,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483172f722a1e554cbad4c9a9a2851e1, type: 3}
-  m_Name: ShootingCamera
+  m_Script: {fileID: 11500000, guid: a29588fde6b7fda45bc25d1815f15b97, type: 3}
+  m_Name: GridTileList
   m_EditorClassIdentifier: 
+  Items: []

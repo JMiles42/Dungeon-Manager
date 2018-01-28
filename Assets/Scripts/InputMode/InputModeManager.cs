@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
-using JMiles42;
+﻿using System;
+using System.Collections.Generic;
 using JMiles42.Attributes;
+using JMiles42.CSharpExtensions;
+using JMiles42.Generics;
 using UnityEngine;
 
-public class InputModeManager: JMilesBehavior
+public class InputModeManager: Singleton<InputModeManager>
 {
 	[SerializeField] [GetSetter("ActiveMode")] private int _activeMode;
 
@@ -18,17 +20,11 @@ public class InputModeManager: JMilesBehavior
 	public int ActiveMode
 	{
 		get { return _activeMode; }
-		set { SwitchMode(value); }
+		set { Switch(value); }
 	}
+	public static Action<int> OnModeSwitch;
 
-	public void SwitchMode(int index)
-	{
-		for(var i = 0; i < modes.Count; i++)
-			modes[i].gameObject.SetActive(index == i);
-		_activeMode = index;
-	}
-
-	private void Start()
+	private void OnEnable()
 	{
 		if(Modes.Count == 0)
 			ActiveMode = -1;
@@ -41,5 +37,18 @@ public class InputModeManager: JMilesBehavior
 		for(var i = 0; i < transform.childCount; i++)
 			transform.GetChild(i).gameObject.SetActive(true);
 		modes = new List<InputMode>(GetComponentsInChildren<InputMode>());
+	}
+
+	public void Switch(int index)
+	{
+		for(var i = 0; i < modes.Count; i++)
+			modes[i].gameObject.SetActive(index == i);
+		OnModeSwitch.Trigger(index);
+		_activeMode = index;
+	}
+
+	public static void SwitchMode(int index)
+	{
+		Instance.Switch(index);
 	}
 }

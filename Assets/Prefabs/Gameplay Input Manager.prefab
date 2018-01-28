@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1316284985095292}
+  m_RootGameObject: {fileID: 1744405358729118}
   m_IsPrefabParent: 1
---- !u!1 &1316284985095292
+--- !u!1 &1744405358729118
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4714897498357994}
-  - component: {fileID: 114032041121554820}
+  - component: {fileID: 4832100221123776}
+  - component: {fileID: 114715523837638678}
   m_Layer: 0
-  m_Name: Placeable Manager
+  m_Name: Gameplay Input Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4714897498357994
+--- !u!4 &4832100221123776
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1316284985095292}
+  m_GameObject: {fileID: 1744405358729118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,21 +40,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114032041121554820
+--- !u!114 &114715523837638678
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1316284985095292}
+  m_GameObject: {fileID: 1744405358729118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaae9b23e43bdc249aa289d80598b8e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6cac9177afd509a4b8d82ec397f65ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 114502777583791872, guid: 12ee262442a8df44d80ab064881ab163, type: 2}
-  InputPosition:
+  PrimaryClick: {fileID: 114865297488606552, guid: 845490c07926d2040881dfa06db0f5cd,
+    type: 2}
+  MiddleClick: {fileID: 114176637327591902, guid: 845490c07926d2040881dfa06db0f5cd,
+    type: 2}
+  SecondaryClick: {fileID: 114475619770649128, guid: 845490c07926d2040881dfa06db0f5cd,
+    type: 2}
+  ScrollWheel: {fileID: 114527961946676998, guid: 845490c07926d2040881dfa06db0f5cd,
+    type: 2}
+  TouchList: []
+  TouchIndexesToRemove: 
+  TimeForAlternateTouch:
+    UseConstant: 1
+    ConstantValue: 0.2
+    Variable: {fileID: 0}
+  MovementForCancelTouch:
+    UseConstant: 1
+    ConstantValue: 0.1
+    Variable: {fileID: 0}
+  touchCount: 0
+  MousePosition:
     UseConstant: 0
     ConstantValue: {x: 0, y: 0}
     Variable: {fileID: 114034299123113616, guid: 845490c07926d2040881dfa06db0f5cd,
       type: 2}
-  placeable: {fileID: 0}

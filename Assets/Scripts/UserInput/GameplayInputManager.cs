@@ -1,66 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JMiles42.AdvVar;
 using JMiles42.Attributes;
-using JMiles42.Extensions;
+using JMiles42.CSharpExtensions;
 using JMiles42.Generics;
-using JMiles42.Systems.InputManager;
-using JMiles42.UnityInterfaces;
+using JMiles42.Interfaces;
+using JMiles42.UnityScriptsExtensions;
 using UnityEngine;
 
 public class GameplayInputManager: Singleton<GameplayInputManager>, IEventListening, IUpdate
 {
-	[SerializeField] InputAxis PrimaryClick = "MouseL";
-	[SerializeField] InputAxis MiddleClick = "MouseM";
-	[SerializeField] InputAxis SecondaryClick = "MouseR";
-	[SerializeField] InputAxis ScrollWheel = "MouseScroll";
+	[SerializeField] private AdvInputAxisVariable PrimaryClick;
+	[SerializeField] private AdvInputAxisVariable MiddleClick;
+	[SerializeField] private AdvInputAxisVariable SecondaryClick;
+	[SerializeField] private AdvInputAxisVariable ScrollWheel;
 
 	public List<SavedTouchData> TouchList = new List<SavedTouchData>(2);
 	public List<int> TouchIndexesToRemove = new List<int>(0);
-	public float TimeForAlternateTouch = 0.2f;
-	public float MovementForCancelTouch = 0.1f;
+	public FloatReference TimeForAlternateTouch = 0.2f;
+	public FloatReference MovementForCancelTouch = 0.1f;
 
 	[DisableEditing] public int touchCount;
 
-	public Vector2 MousePosition;
+	public Vector2Reference MousePosition;
 
-	public event Action<Vector2> OnPrimaryClick = (a) =>
+	public static event Action<Vector2> OnPrimaryClick = (vec) =>
 												  {
 													  //Debug.Log("Primary" + a);
 												  };
 
-	public event Action<Vector2> OnSecondaryClick = (a) =>
+	public static event Action<Vector2> OnSecondaryClick = (vec) =>
 													{
 														//Debug.Log("Secondary" + a);
 													};
 
-	public event Action<Vector2> OnScreenStartMove = a =>
+	public static event Action<Vector2> OnScreenStartMove = (vec) =>
 													 {
 														 //Debug.Log("Screen Moved" + a);
 													 };
 
-	public event Action<Vector2> OnScreenMoved = a =>
+	public static event Action<Vector2> OnScreenMoved = (vec) =>
 												 {
 													 //Debug.Log("Screen Moved" + a);
 												 };
 
-	public event Action<Vector2> OnScreenEndMove = a =>
+	public static event Action<Vector2> OnScreenEndMove = (vec) =>
 												   {
 													   //Debug.Log("Screen Moved" + a);
 												   };
 
-	public event Action<float> OnScreenZoom = a =>
+	public static event Action<float> OnScreenZoom = (f) =>
 											  {
 												  //Debug.Log("Screen Moved" + a);
 											  };
-
-	/// <summary>
-	/// Bool is true if it was a left click, false for right click
-	/// </summary>
-	public event Action<GridBlock, bool> OnBlockPressed = (a, b) =>
-														  {
-															  //Debug.Log("Screen Moved" + a);
-														  };
 
 	public void OnEnable()
 	{
@@ -68,24 +61,24 @@ public class GameplayInputManager: Singleton<GameplayInputManager>, IEventListen
 		Input.backButtonLeavesApp = false;
 		MovementForCancelTouch = Screen.dpi * MovementForCancelTouch;
 
-		PrimaryClick.OnKeyDown += OnPrimaryKeyDown;
-		SecondaryClick.OnKeyDown += OnSecondaryKeyDown;
-		MiddleClick.OnKeyDown += OnKeyMiddleDown;
-		MiddleClick.OnKeyUp += OnKeyMiddleUp;
-		MiddleClick.OnKey += OnKeyMiddle;
+		PrimaryClick.Value.OnKeyDown += OnPrimaryKeyDown;
+		SecondaryClick.Value.OnKeyDown += OnSecondaryKeyDown;
+		MiddleClick.Value.OnKeyDown += OnKeyMiddleDown;
+		MiddleClick.Value.OnKeyUp += OnKeyMiddleUp;
+		MiddleClick.Value.OnKey += OnKeyMiddle;
 
-		ScrollWheel.OnKey += OnScroll;
+		ScrollWheel.Value.OnKey += OnScroll;
 	}
 
 	private void OnScroll(float amount) { OnScreenZoom.Trigger(amount); }
 
 	public void Update()
 	{
-		MousePosition = Input.mousePosition;
-		PrimaryClick.DoUpdateAndInput();
-		MiddleClick.DoUpdateAndInput();
-		SecondaryClick.DoUpdateAndInput();
-		ScrollWheel.DoUpdateAndInput(0f);
+		MousePosition.Value = Input.mousePosition;
+		PrimaryClick.Value.UpdateDataAndCallEvents();
+		MiddleClick.Value.UpdateDataAndCallEvents();
+		SecondaryClick.Value.UpdateDataAndCallEvents();
+		ScrollWheel.Value.UpdateDataAndCallEvents(0f);
 
 		if ((touchCount = Input.touchCount) == 0)
 		{
@@ -114,44 +107,42 @@ public class GameplayInputManager: Singleton<GameplayInputManager>, IEventListen
 		TouchIndexesToRemove.Clear();
 	}
 
-	private void OnPrimaryKeyDown() { OnPrimaryClick.Trigger(Input.mousePosition.GetVector2()); }
+	private void OnPrimaryKeyDown() { OnPrimaryClick.Trigger(Input.mousePosition.ToVector2()); }
 
-	private void OnSecondaryKeyDown() { OnSecondaryClick.Trigger(Input.mousePosition.GetVector2()); }
+	private void OnSecondaryKeyDown() { OnSecondaryClick.Trigger(Input.mousePosition.ToVector2()); }
 
 	private Vector2 MouseStartPos;
 
 	private Vector2 MouseDelta
 	{
-		get { return MousePosition - MouseStartPos; }
+		get { return (MousePosition.Value - MouseStartPos); }
 	}
 
 	private void OnKeyMiddleDown()
 	{
-		MouseStartPos = MousePosition;
-		OnScreenStartMove.Trigger(MousePosition);
+		MouseStartPos = MousePosition.Value;
+		OnScreenStartMove.Trigger(MousePosition.Value);
 	}
 
 	private void OnKeyMiddleUp()
 	{
 		MouseStartPos = Vector2.zero;
-		OnScreenEndMove.Trigger(MousePosition);
+		OnScreenEndMove.Trigger(MousePosition.Value);
 	}
 
 	private void OnKeyMiddle(float amount) { OnScreenMoved.Trigger(MouseDelta); }
 
 	private void DoTouchPanCamera(SavedTouchData touch) {}
 
-	public void GridBlockPressed(GridBlock block, bool leftClick) { OnBlockPressed.Trigger(block, leftClick); }
-
 	public void OnDisable()
 	{
-		PrimaryClick.OnKeyDown -= OnPrimaryKeyDown;
-		SecondaryClick.OnKeyDown -= OnSecondaryKeyDown;
-		MiddleClick.OnKeyDown -= OnKeyMiddleDown;
-		MiddleClick.OnKeyUp -= OnKeyMiddleUp;
-		MiddleClick.OnKey -= OnKeyMiddle;
+		PrimaryClick.Value.OnKeyDown -= OnPrimaryKeyDown;
+		SecondaryClick.Value.OnKeyDown -= OnSecondaryKeyDown;
+		MiddleClick.Value.OnKeyDown -= OnKeyMiddleDown;
+		MiddleClick.Value.OnKeyUp -= OnKeyMiddleUp;
+		MiddleClick.Value.OnKey -= OnKeyMiddle;
 
-		ScrollWheel.OnKey -= OnScroll;
+		ScrollWheel.Value.OnKey -= OnScroll;
 	}
 
 	private void CheckTouches(Touch touch)
@@ -182,20 +173,20 @@ public class GameplayInputManager: Singleton<GameplayInputManager>, IEventListen
 
 	private void CalculateTouch(SavedTouchData data, Touch newTouch)
 	{
-		var resualts = data.GetTouchEndData();
+		var result = data.GetTouchEndData();
 
-		var touchLength = CalculateTouchLength(resualts.HeldTime);
+		var touchLength = CalculateTouchLength(result.HeldTime);
 
 		//Debug.Log("Held Time: " + resualts.HeldTime + ":" + touchLength);
 		switch (touchLength)
 		{
 			case TouchLength.Short:
 				if (TouchHasNotMoved(data, newTouch, MovementForCancelTouch))
-					OnPrimaryClick.Trigger(resualts.Data.StartPos);
+					OnPrimaryClick.Trigger(result.Data.StartPos);
 				break;
 			case TouchLength.Long:
 				if (TouchHasNotMoved(data, newTouch, MovementForCancelTouch))
-					OnSecondaryClick.Trigger(resualts.Data.StartPos);
+					OnSecondaryClick.Trigger(result.Data.StartPos);
 				break;
 		}
 	}

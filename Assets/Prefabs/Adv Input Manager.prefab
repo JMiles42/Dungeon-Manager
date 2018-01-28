@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4652502068957632}
-  - component: {fileID: 114073128481880738}
+  - component: {fileID: 114036238137094844}
   m_Layer: 0
   m_Name: Adv Input Manager
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114073128481880738
+--- !u!114 &114036238137094844
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -58,13 +58,13 @@ MonoBehaviour:
   - {fileID: 114845956205945732, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
   - {fileID: 114667269035101174, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
   - {fileID: 114152720497503092, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
+  - {fileID: 114527961946676998, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
   - {fileID: 114695843022490172, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
   - {fileID: 114280237389744534, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
-  - {fileID: 114527961946676998, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
   - {fileID: 114330069535280228, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
   - {fileID: 114970466975453844, guid: 845490c07926d2040881dfa06db0f5cd, type: 2}
   MousePosition:
     UseConstant: 0
-    ConstantValue: {x: 0, y: 0, z: 0}
+    ConstantValue: {x: 0, y: 0}
     Variable: {fileID: 114034299123113616, guid: 845490c07926d2040881dfa06db0f5cd,
       type: 2}

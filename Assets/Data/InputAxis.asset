@@ -19,10 +19,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96ed7618ee09a424cb4d8bf974e8dac9, type: 3}
+  m_Script: {fileID: 11500000, guid: a1fa8c2328403e94ea54d87c21d5fd0f, type: 3}
   m_Name: Mouse Position
   m_EditorClassIdentifier: 
-  _value: {x: 0, y: 0, z: 0}
+  _value: {x: 541, y: 368}
 --- !u!114 &114152720497503092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,6 +37,25 @@ MonoBehaviour:
   _value:
     Axis: Jump
     UnityAxis: Jump
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114176637327591902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: MiddleClick
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: MiddleClick
+    UnityAxis: MiddleClick
     m_Value: 0
     m_DeadZone: 0
     KeyPos: 0
@@ -58,7 +77,7 @@ MonoBehaviour:
     UnityAxis: Mouse Y
     m_Value: 0
     m_DeadZone: 0
-    KeyPos: 0
+    KeyPos: 3
     ValueInverted: 0
     OnlyButton: 0
 --- !u!114 &114330069535280228
@@ -99,6 +118,25 @@ MonoBehaviour:
     KeyPos: 0
     ValueInverted: 0
     OnlyButton: 0
+--- !u!114 &114475619770649128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: SecondaryClick
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: SecondaryClick
+    UnityAxis: SecondaryClick
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
 --- !u!114 &114527961946676998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +153,7 @@ MonoBehaviour:
     UnityAxis: Mouse ScrollWheel
     m_Value: 0
     m_DeadZone: 0
-    KeyPos: 0
+    KeyPos: 3
     ValueInverted: 0
     OnlyButton: 0
 --- !u!114 &114621026351797150
@@ -191,7 +229,7 @@ MonoBehaviour:
     UnityAxis: Mouse X
     m_Value: 0
     m_DeadZone: 0
-    KeyPos: 0
+    KeyPos: 3
     ValueInverted: 0
     OnlyButton: 0
 --- !u!114 &114845956205945732
@@ -208,6 +246,25 @@ MonoBehaviour:
   _value:
     Axis: Fire2
     UnityAxis: Fire2
+    m_Value: 0
+    m_DeadZone: 0
+    KeyPos: 0
+    ValueInverted: 0
+    OnlyButton: 0
+--- !u!114 &114865297488606552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790ac529818ba42479ec636c20fca80f, type: 3}
+  m_Name: PrimaryClick
+  m_EditorClassIdentifier: 
+  _value:
+    Axis: PrimaryClick
+    UnityAxis: PrimaryClick
     m_Value: 0
     m_DeadZone: 0
     KeyPos: 0
