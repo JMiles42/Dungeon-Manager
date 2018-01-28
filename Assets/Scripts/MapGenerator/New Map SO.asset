@@ -11,4 +11,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5f02889b9beea46baef9c827940dd6, type: 3}
   m_Name: New Map SO
   m_EditorClassIdentifier: 
-  Data: {fileID: 0}
+  Data:
+    MapSize:
+      Width: 100
+      Height: 100
+    PassageWays: []
+    Rooms:
+    - Position:
+        Position:
+          x: 9
+          y: 77
+      Dimensions:
+        Width: 11
+        Height: 10
+    - Position:
+        Position:
+          x: 83
+          y: 31
+      Dimensions:
+        Width: 11
+        Height: 18
+    - Position:
+        Position:
+          x: 34
+          y: 72
+      Dimensions:
+        Width: 6
+        Height: 11
+    - Position:
+        Position:
+          x: 7
+          y: 60
+      Dimensions:
+        Width: 16
+        Height: 19
+    - Position:
+        Position:
+          x: 7
+          y: 66
+      Dimensions:
+        Width: 14
+        Height: 7
+  Settings: {fileID: 11400000, guid: 237d6179107b5cd46801c662a7b80fc9, type: 2}

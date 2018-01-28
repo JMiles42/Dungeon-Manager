@@ -1,2 +1,5 @@
-﻿public class PassageWay
+﻿using System;
+
+[Serializable]
+public class PassageWay
 { }

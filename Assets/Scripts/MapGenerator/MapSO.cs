@@ -2,5 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "MapGen/Map")]
-public class MapSO: GenericScriptableObject<MapSO>
-{ }
+public class MapSO: GenericScriptableObject<Map>
+{
+	public GeneratorSettingsSO Settings;
+}

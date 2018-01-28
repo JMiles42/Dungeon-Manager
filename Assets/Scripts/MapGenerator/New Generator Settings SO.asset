@@ -11,3 +11,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9e11c8c2dc30479d38469b16f888b, type: 3}
   m_Name: New Generator Settings SO
   m_EditorClassIdentifier: 
+  Data:
+    Seed: 422
+    ExtraPassageWayCount:
+      Min: 4
+      Max: 10
+    RoomCount:
+      Min: 4
+      Max: 10
+    RoomSize:
+      Min: 5
+      Max: 20
+    TotalGridSize:
+      Width: 100
+      Height: 100
