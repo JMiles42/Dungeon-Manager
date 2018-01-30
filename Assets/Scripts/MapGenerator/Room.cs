@@ -1,21 +1,11 @@
 ﻿using System;
-using JMiles42.Attributes;
-using JMiles42.Grid;
+
 [Serializable]
 public class Room
 {
-	public GridPosition Position;
-	[NoFoldout] public Size Dimensions;
-
-	public Room()
-	{
-		Position = GridPosition.Zero;
-		Dimensions = Size.One;
-	}
-
-	public Room(GridPosition position, Size dimensions)
-	{
-		Position = position;
-		Dimensions = dimensions;
-	}
+	public Direction enteringCorridor; // The direction of the corridor that is entering this room.
+	public int roomHeight; // How many tiles high the room is.
+	public int roomWidth; // How many tiles wide the room is.
+	public int xPos; // The x coordinate of the lower left tile of the room.
+	public int yPos; // The y coordinate of the lower left tile of the room.
 }

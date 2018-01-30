@@ -1,5 +1,4 @@
 ﻿using JMiles42.Editor.Utilities;
-using JMiles42.Generics;
 using JMiles42.Grid;
 using UnityEditor;
 using UnityEngine;
@@ -7,42 +6,30 @@ using UnityEngine;
 public static class MapGizmos
 {
 	[DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)]
-	public static void MapGizmoDrawer(GeneratorComponent generator, GizmoType type)
+	public static void MapGizmoDrawer(MapCreator creator, GizmoType type)
 	{
-		if(!generator.Map)
+		if(!creator.Map)
 			return;
-		if(generator.Map.Data == null)
+		if(creator.Map.Data?.tiles == null)
 			return;
-
-		//DrawMainGrid(generator.Map);
-		DrawRooms(generator.Map);
-		DrawPassageWays(generator.Map);
-	}
-
-	private static void DrawMainGrid(MapSO Map)
-	{
-		//Main Grid
-		Array2DHelpers.ForLoop2D(Map.Data.MapSize, DrawCube);
-	}
-
-	private static void DrawRooms(MapSO Map)
-	{
-		using(EditorDisposables.ColorChanger(Color.red, EditorColourType.Gizmos))
-				//Rooms
+		for(var x = 0; x < creator.Map.Data.tiles.Length; x++)
 		{
-			for(var i = 0; i < Map.Data.Rooms.Count; i++)
-				Array2DHelpers.ForLoop2D(Map.Data.Rooms[i].Dimensions.ToVector2I() + Map.Data.Rooms[i].Position, Map.Data.Rooms[i].Position, DrawCube);
+			var dataTile = creator.Map.Data.tiles[x];
+			for(var y = 0; y < dataTile.Length; y++)
+			{
+				var tile = dataTile[y];
+				switch(tile)
+				{
+					case TileType.Wall:
+						using(EditorDisposables.ColorChanger(Color.blue, EditorColourType.Gizmos))
+							Gizmos.DrawCube(new GridPosition(x, y), Vector3.one);
+						break;
+					case TileType.Floor:
+						using(EditorDisposables.ColorChanger(Color.green, EditorColourType.Gizmos))
+							Gizmos.DrawCube(new GridPosition(x, y), Vector3.one);
+						break;
+				}
+			}
 		}
-	}
-
-	private static void DrawPassageWays(MapSO Map)
-	{
-		//Passage Ways
-		//Array2DHelpers.ForLoop2D(generator.Map.Data.MapSize, DrawCube);
-	}
-
-	private static void DrawCube(int x, int y)
-	{
-		Gizmos.DrawCube(new GridPosition(x, y), Vector3.one * 0.99f);
 	}
 }

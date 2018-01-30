@@ -1,22 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using JMiles42.Attributes;
 
 [Serializable]
 public class Map
 {
-	[NoFoldout] public Size MapSize = new Size(100);
+	public Corridor[] corridors;
+	public Room[] rooms;
+	public Column[] tiles;
+}
 
-	[NoFoldout] public List<PassageWay> PassageWays = new List<PassageWay>();
+[Serializable]
+public class Column
+{
+	public TileType[] tiles;
 
-	[NoFoldout] public List<Room> Rooms = new List<Room>();
+	public int Length => tiles.Length;
+	public int Count => tiles.Length;
 
-	public static Map Default { get; } = new Map();
-
-	internal void Clear()
+	public TileType this[int i]
 	{
-		MapSize = Size.One * 100;
-		PassageWays.Clear();
-		Rooms.Clear();
+		get { return tiles[i]; }
+		set { tiles[i] = value; }
 	}
 }
